@@ -3,7 +3,16 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <AppBar position="static" elevation={0}>
+    <AppBar
+      position="static"
+      elevation={0}
+      sx={{
+        bgcolor: "background.paper",
+        color: "text.primary",
+        borderBottom: 1,
+        borderColor: "divider",
+      }}
+    >
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
         <Typography
           component={Link}
@@ -18,14 +27,14 @@ const Header = () => {
           LankaHub
         </Typography>
 
-        <Box>
-          <Button color="inherit" component={Link} to="/">
+        <Box sx={{ display: "flex", gap: 2 }}>
+          <Button variant="contained" color="primary" component={Link} to="/">
             Home
           </Button>
-          <Button color="inherit" component={Link} to="/ads">
+          <Button variant="contained" color="primary" component={Link} to="/ads">
             Ads
           </Button>
-          <Button color="inherit" component={Link} to="/login">
+          <Button variant="contained" color="primary" component={Link} to="/login">
             Login
           </Button>
         </Box>
